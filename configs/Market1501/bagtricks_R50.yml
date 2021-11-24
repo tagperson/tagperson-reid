@@ -1,0 +1,23 @@
+_BASE_: ../Base-bagtricks.yml
+
+# [07/29 18:16:34 fastreid.evaluation.testing]: Evaluation results in csv format: 
+# | Dataset    | Rank-1   | Rank-5   | Rank-10   | mAP   | mINP   | metric   |
+# |:-----------|:---------|:---------|:----------|:------|:-------|:---------|
+# | Market1501 | 94.66    | 98.25    | 99.05     | 86.22 | 60.73  | 90.44    |
+
+MODEL:
+  BACKBONE:
+    PRETRAIN_PATH: "/home/anonymous/.cache/torch/checkpoints/resnet50-19c8e357.pth"
+DATASETS:
+  NAMES: ("Market1501",)
+  TESTS: ("Market1501",)
+
+SOLVER:
+  AMP:
+    ENABLED: True
+  IMS_PER_BATCH: 64
+
+TEST:
+  EVAL_PERIOD: 10
+
+OUTPUT_DIR: "logs/market1501/bagtricks_R50"

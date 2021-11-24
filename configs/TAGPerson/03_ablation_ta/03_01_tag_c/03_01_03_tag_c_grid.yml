@@ -1,0 +1,8 @@
+DATASETS:
+  MAKEHUMAN:
+    SUBPATH:
+    - makehuman_2954_tagp_tag_c_grid_20211117
+  NAMES: ("MakeHuman", )
+  TESTS: ("GRID", )
+OUTPUT_DIR: logs/TAGPerson/03_ablation_ta/03_01_tag_c/03_01_03_tag_c_grid
+_BASE_: ../../TAGPerson_base.yml

@@ -1,0 +1,10 @@
+DATASETS:
+  MAKEHUMAN:
+    SUBPATH:
+    - makehuman_2954_tagp_tag_g_msmt_g2_20211117
+  MSMT17_V1_CUSTOM:
+    ROOT: MSMT17_V1_Custom/msmt17_v1_gamma_random_0.5_2.0
+  NAMES: ("MakeHuman", )
+  TESTS: ("MSMT17", "MSMT17Custom")
+OUTPUT_DIR: logs/TAGPerson/04_gamma_variant/04_05_tagp_ta/04_05_06_tagp_ta_msmt_g2
+_BASE_: ../../TAGPerson_base.yml

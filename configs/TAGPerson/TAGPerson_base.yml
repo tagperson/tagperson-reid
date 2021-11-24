@@ -1,0 +1,59 @@
+_BASE_: "../Base-bagtricks.yml"
+
+MODEL:
+  BACKBONE:
+    PRETRAIN_PATH: "~/.cache/torch/checkpoints/resnet50-19c8e357.pth"
+  LOSSES:
+    CE:
+      EPSILON: 0.15
+      ALPHA: 0.15
+    TRI:
+      MARGIN: 0.1
+      SCALE: 0.75
+
+FIX_SEED: -1
+
+INPUT:
+  REA:
+    ENABLED: False
+    PROB: 0.1
+  AUGMIX: 
+    ENABLED: True
+    PROB: 0.5
+  CJ:
+    ENABLED: True
+    BRIGHTNESS: 0.95
+    CONTRAST: 0.65
+    SATURATION:  0.55
+    HUE: 0.05
+
+DATALOADER:
+  SAMPLER_TRAIN: 'NaiveIdentitySampler'
+  NUM_INSTANCE: 8
+  NUM_WORKERS: 8
+
+SOLVER:
+  WARMUP_FACTOR: 0.1
+  WARMUP_ITERS: 2000
+  OPT: 'SGD'
+  GAMMA: 0.1
+  BASE_LR: 0.05
+  STEPS: [30, 60]
+  MAX_EPOCH: 80
+  AMP: 
+    ENABLED: True
+  IMS_PER_BATCH: 128
+  CHECKPOINT_PERIOD: 5
+
+TEST:
+  EVAL_PERIOD: 5
+
+DATASETS:
+  NAMES: ("MakeHuman", )
+  TESTS: ("Market1501", "MSMT17")
+  MAKEHUMAN:
+    SUBPATH: ['']
+
+CUDNN_BENCHMARK: True
+
+OUTPUT_DIR: ""

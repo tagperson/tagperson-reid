@@ -1,0 +1,8 @@
+DATASETS:
+  MAKEHUMAN:
+    SUBPATH:
+    - makehuman_2954_tagp_ta_msmt_20211117
+  NAMES: ("MakeHuman", )
+  TESTS: ("MSMT17", )
+OUTPUT_DIR: logs/TAGPerson/01_direct_transfer/tagp_ta/tagp_ta_msmt
+_BASE_: ../../TAGPerson_base.yml

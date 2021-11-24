@@ -1,0 +1,10 @@
+yacs
+Cython
+tensorboard
+gdown
+sklearn
+termcolor
+tabulate
+faiss-cpu
+six
+opencv-python==4.4.1

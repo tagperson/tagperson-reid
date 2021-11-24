@@ -1,0 +1,53 @@
+_BASE_: '../../../configs/TAGPerson/TAGPerson_base.yml'
+
+MODEL:
+  LOSSES:
+    NAME: ("CrossEntropyLoss", )
+    CE:
+      SCALE: 0.0
+    ATTRIBUTE:
+      ENABLED: False
+    OPTION:
+      ENABLED: True
+  META_ARCHITECTURE: "ReAttributeBaseline"
+  ATTRIBUTE_HEADS: []
+  OPTION_HEADS:
+    - 
+      NAME: 'ReAttributeHead'
+      REMARK: 'gamma'
+      FEAT_DIM: 2048
+      EMBEDDING_DIM: 2048
+      NUM_CLASSES: 1
+      NECK_FEAT: 'before'
+      POOL_LAYER: 'avgpool'
+      CLS_LAYER: 'linear'
+      WITH_BNNECK: False
+      NORM: 'BN'
+      LOSSES:
+        NAME: ("MSELoss")
+        MSE:
+          SCALE: 1.0
+
+DATASETS:
+  NAMES: ("MakeHumanAttr", )
+  TESTS: ("MakeHumanAttr", )
+  MAKEHUMAN:
+    SUBPATH: ['makehuman_2954_gamma_university']
+
+SOLVER:
+  IMS_PER_BATCH: 128
+  BASE_LR: 3.5e-5
+  CHECKPOINT_PERIOD: 4
+  STEPS: [5, 10, 13]
+  MAX_EPOCH: 15
+
+TEST:
+  ATTRIBUTE:
+    ENABLED: True
+    EVAL_ONE_ATTRIBUTE: False
+
+  EVAL_PERIOD: 2
+
+FIX_SEED: -1
+
+OUTPUT_DIR: "logs/projects/FastReattribute/TAGPerson/tagperson_option_regress_gamma"

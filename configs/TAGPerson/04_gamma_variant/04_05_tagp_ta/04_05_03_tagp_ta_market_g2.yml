@@ -1,0 +1,10 @@
+DATASETS:
+  MAKEHUMAN:
+    SUBPATH:
+    - makehuman_2954_tagp_tag_g_market_g2_20211117
+  MARKET1501_CUSTOM:
+    ROOT: Market1501Custom/market1501_gamma_random_0.5_2.0
+  NAMES: ("MakeHuman", )
+  TESTS: ("Market1501", "Market1501Custom")
+OUTPUT_DIR: logs/TAGPerson/04_gamma_variant/04_05_tagp_ta/04_05_03_tagp_ta_market_g2
+_BASE_: ../../TAGPerson_base.yml

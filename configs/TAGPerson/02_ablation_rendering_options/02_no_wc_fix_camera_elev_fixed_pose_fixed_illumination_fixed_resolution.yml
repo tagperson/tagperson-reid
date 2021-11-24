@@ -1,0 +1,12 @@
+DATASETS:
+  MAKEHUMAN:
+    SUBPATH:
+    - makehuman_2954_tagp_no_wc_fix_camera_elev_fixed_pose_fixed_illumination_fixed_resolution
+  NAMES: ("MakeHuman", )
+  TESTS: ("Market1501",)
+OUTPUT_DIR: logs/TAGPerson/02_ablation_rendering_options/02_no_wc_fix_camera_elev_fixed_pose_fixed_illumination_fixed_resolution
+SOLVER:
+  CHECKPOINT_PERIOD: 100
+TEST:
+  EVAL_PERIOD: 100
+_BASE_: ../TAGPerson_base.yml
