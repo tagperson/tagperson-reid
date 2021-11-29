@@ -3,6 +3,17 @@ This repository contains the training codes of the paper `TAGPerson: A Target-Aw
 
 We use [PyTorch](https://pytorch.org/) to train the person ReID models.
 
+## 0. Experimental Results
+
+**Parts of the experimental results in the paper is listed below.**
+
+
+![table3](static/snapshot-table3.png)
+![table4](static/snapshot-table4.png)
+
+The corresponding configs, datasets, and models can be downloaded from [this link](https://drive.google.com/drive/folders/1eiFvsk78OqxerKSceRkORTlk5B7EB3ao).
+
+
 ## 1. Get Started
 
 #### 1.1 Install Python Environment
